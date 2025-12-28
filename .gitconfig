@@ -1,0 +1,11 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential]
+	helper = store
+[user]
+	name = orson-dev
+	email = orson-dev@github.local
