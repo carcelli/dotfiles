@@ -1,0 +1,18 @@
+# History files
+.zsh_history
+.bash_history
+
+# Cache and temp files
+*.zwc
+.zcompdump*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Sensitive data (uncomment if needed)
+# .git-credentials
+# .ssh/
