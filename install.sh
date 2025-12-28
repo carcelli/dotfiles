@@ -34,13 +34,24 @@ for file in "${files[@]}"; do
         continue
     fi
 
-    # Backup existing file if it exists and is not already a symlink
-    if [[ -f "$dest" && ! -L "$dest" ]]; then
-        echo "Backing up $dest to $BACKUP_DIR/"
-        mv "$dest" "$BACKUP_DIR/"
-    elif [[ -L "$dest" ]]; then
+    # Handle existing destination (file, symlink, or directory)
+    if [[ -L "$dest" ]]; then
+        # Remove existing symlink
         echo "Removing existing symlink $dest"
         rm "$dest"
+    elif [[ -f "$dest" ]]; then
+        # Backup existing regular file
+        echo "Backing up $dest to $BACKUP_DIR/"
+        mv "$dest" "$BACKUP_DIR/"
+    elif [[ -d "$dest" ]]; then
+        # Remove existing directory (backup if it contains files)
+        if [[ -n "$(ls -A "$dest" 2>/dev/null)" ]]; then
+            echo "Backing up non-empty directory $dest to $BACKUP_DIR/"
+            mv "$dest" "$BACKUP_DIR/"
+        else
+            echo "Removing empty directory $dest"
+            rmdir "$dest"
+        fi
     fi
 
     # Create symlink
