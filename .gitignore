@@ -1,18 +1,80 @@
+# Sensitive files - NEVER commit these!
+*.pem
+*.key
+*.p12
+*.pfx
+id_*
+*.pub
+.git-credentials
+.cursor/auth.json
+.config/cursor/auth.json
+
 # History files
 .zsh_history
 .bash_history
+.python_history
+.node_repl_history
+.mysql_history
+.sqlite_history
 
-# Cache and temp files
-*.zwc
-.zcompdump*
-
-# OS-specific files
+# Cache and temporary files
+.cache/
+*.cache
+*.tmp
+*.temp
 .DS_Store
 Thumbs.db
 
 # Logs
 *.log
+logs/
+*.log.*
 
-# Sensitive data (uncomment if needed)
-# .git-credentials
-# .ssh/
+# OS generated files
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.idea/
+*.swp
+*.swo
+*~
+
+# Package manager caches
+.npm/
+.yarn/
+.pip/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# SSH known hosts (might contain sensitive network info)
+# Uncomment if you want to exclude: .ssh/known_hosts

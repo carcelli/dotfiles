@@ -14,6 +14,13 @@ echo "Installing dotfiles from $DOTFILES_DIR"
 mkdir -p "$BACKUP_DIR"
 echo "Created backup directory: $BACKUP_DIR"
 
+# Create necessary directories for configuration files
+echo "Creating configuration directories..."
+mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.config/gh"
+mkdir -p "$HOME/.cursor"
+mkdir -p "$HOME/.vscode"
+
 # List of files to symlink
 files=(
     ".bashrc"
@@ -22,6 +29,10 @@ files=(
     ".gitconfig"
     ".profile"
     ".bash_logout"
+    ".cursor/cli-config.json"
+    ".cursor/mcp.json"
+    ".config/gh/config.yml"
+    ".vscode/settings.json"
 )
 
 for file in "${files[@]}"; do

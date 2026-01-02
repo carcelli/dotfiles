@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "uithub": {
+      "url": "https://mcp.uithub.com/mcp",
+      "headers": {}
+    }
+  }
+}
